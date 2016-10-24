@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='content-type' content='text/html; charset=utf-8'>
+<title>Machine Learning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.simpletable td{ color:green; }
+</style>
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+<script type='text/javascript'>
+  $(document).ready(function()
+    {
+        $('button').on('click', function()
+	    {
+	          var request = $.ajax({'url': '/getData'});
+		        request.done(function(response) 
+			      {
+			              $('#foo').html(response.foo);
+				              $('#baz').text(response.baz);
+					      $('#buckfast').text(response.buckfast);
+					            });
+						          request.fail(function(jqXHR, textStatus) 
+							        {
+								        alert('Request failed: ' + textStatus);
+									      });
+									          })
+										    });
+										    </script>
+										    </head>
+										    <body class="w3-light-grey">
+										    <div  class="w3-container"><br>
+										      <button class="w3-btn w3-ripple w3-grey w3-hover-green" style="color:#87D0E8">Run MLR</button>
+										        <h1>Results</h1>
+											  <div id='foo'></div>
+											    <h1>Something Else</h1>
+											      <div id='baz'></div>
+											    <h3>Yeoooooooo</h3>
+											      <div id='buckfast'></div>
+											      </div>
+											      </body>
+											      </html>
