@@ -35,8 +35,9 @@ class App:
     return {
       'foo' : HTMLParser.HTMLParser().unescape(scripttorun.returnthis),
       'baz' : ['array1', 'array2'],
-      'buckfast' : 'I love the bucky so a doooo'
-    }
+      'buckfast' : 'just a test to return this string',
+      'piechart_value' : 70
+      }
 
 
 
