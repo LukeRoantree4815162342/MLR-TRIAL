@@ -32,11 +32,34 @@ class App:
   @cherrypy.tools.json_out()
   def getData(self):
     #arr = ['test', 'luke1234', 'another random string1234', 'will this bee seen']
+    testvar = scripttorun.maketestvar()
     return {
       'foo' : HTMLParser.HTMLParser().unescape(scripttorun.returnthis),
       'baz' : ['array1', 'array2'],
       'buckfast' : 'just a test to return this string',
-      'piechart_value' : 70
+      'piechart_value' :  HTMLParser.HTMLParser().unescape('''
+          <script type="text/javascript">
+	        google.charts.load('current', {'packages':['corechart']});
+		      google.charts.setOnLoadCallback(drawChart);
+		            function drawChart() {
+			    
+			            var data = google.visualization.arrayToDataTable([
+				              ['Task', 'Hours per Day'],
+					                ['Work',     ''' + str(testvar) + '''],
+							          ['Eat',      2],
+								            ['Commute',  2],
+									              ['Watch TV', 2],
+										                ['Sleep',    7]
+												        ]);
+													
+													        var options = {
+														          title: 'My Daily Activities'
+															          };
+																  
+																          var chart = new google.visualization.PieChart(document.getElementById('piechart_value'));
+																	  
+																	          chart.draw(data, options);
+																		        }</script>''')
       }
 
 
