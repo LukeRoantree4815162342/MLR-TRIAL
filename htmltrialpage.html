@@ -16,12 +16,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <script type='text/javascript'>
   $(document).ready(function()
     {
-        $('button').on('click', function()
+        $('#button1').on('click', function updateGraph()
 	    {
 		  var request = $.ajax({'url': '/getData'});
 		        request.done(function(response) 
 			      {
-			              $('#foo').html(response.foo);
+			              //$('#foo').html(response.foo);
 				              $('#baz').text(response.baz);
 					      $('#buckfast').text(response.buckfast);
 					      $('#piechart_value').html(response.piechart_value);      
@@ -30,21 +30,21 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 							        {
 								        alert('Request failed: ' + textStatus);
 									      });
-									      setTimeout(arguments.callee(), 1000);
+									      setTimeout(updateGraph, 1500);
 									          })
 										    });
 										    </script>
 										    </head>
 										    <body class="w3-light-grey">
 										    <div  class="w3-container"><br>
-										      <button class="w3-btn w3-ripple w3-grey w3-hover-green" style="color:#87D0E8">Run MLR</button>
+										    <button id='button1' class="w3-btn w3-ripple w3-grey w3-hover-green" style="color:#87D0E8">Run MLR</button>
 										        <h1>Results</h1>
 											  <div id='foo'></div>
 											    <h1>Something Else</h1>
 											      <div id='baz'></div>
-											    <h3>Yeoooooooo</h3>
+											    <h3>A Heading</h3>
 											      <div id='buckfast'></div>
-											      <div id='piechart_value'></div>
+											      <div id='piechart_value' style="width:700px; height:400px;"></div>
 										    </div> 
  </body>
  </html>

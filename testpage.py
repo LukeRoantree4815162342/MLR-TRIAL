@@ -44,16 +44,16 @@ class App:
 		            function drawChart() {
 			    
 			            var data = google.visualization.arrayToDataTable([
-				              ['Task', 'Hours per Day'],
-					                ['Work',     ''' + str(testvar) + '''],
-							          ['Eat',      2],
-								            ['Commute',  2],
-									              ['Watch TV', 2],
-										                ['Sleep',    7]
+				              ['const1', 'Hours per Day'],
+					                ['pulled from other program',     ''' + str(testvar) + '''],
+							          ['const2',      2],
+								            ['const3',  2],
+									              ['const4', 2],
+										                ['const5',    7]
 												        ]);
 													
 													        var options = {
-														          title: 'My Daily Activities'
+														          title: 'Demo to show continuous updating from external program'
 															          };
 																  
 																          var chart = new google.visualization.PieChart(document.getElementById('piechart_value'));
